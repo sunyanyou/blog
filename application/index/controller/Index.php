@@ -5,6 +5,6 @@ class Index
 {
     public function index()
     {
-        return 'hello,world!';
+        return '<div style="text-align:center;font-size:26px;"hello,world!</div>';
     }
 }
