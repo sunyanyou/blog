@@ -136,10 +136,21 @@ return [
         'taglib_begin' => '{',
         // 标签库标签结束标记
         'taglib_end'   => '}',
+
     ],
 
     // 视图输出字符串内容替换
-    'view_replace_str'       => [],
+    'view_replace_str'       => [
+        '__STATIC__' => '/public/static',
+        '__CSS__'    => '/public/static/css',
+        '__IMG'      => '/public/static/images',  
+        '__JS__'     => '/public/static/js',
+        '__LIB__'    => '/public/static/lib',
+        '__FONT__'   => '/public/static/fonts',
+        '__HUI__'    => '/public/static/h-ui',
+        '__HUIA__'   => '/public/static/h-ui.admin',
+        '__TMP__'    => '/public/static/temp',     
+    ],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
     'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
