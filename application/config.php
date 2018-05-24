@@ -247,4 +247,11 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+
+    //验证码配置
+    'captcha'       =>   [
+        'length'  =>  '3',
+        'imageH'  =>  '40',
+        'fontsize' => '35',
+    ],
 ];

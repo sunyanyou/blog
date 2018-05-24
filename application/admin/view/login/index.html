@@ -31,19 +31,20 @@
       <div class="row cl">
         <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
         <div class="formControls col-xs-8">
-          <input id="" name="" type="text" placeholder="账户" class="input-text size-L">
+          <input name="username" type="text" placeholder="账户" class="input-text size-L">
         </div>
       </div>
       <div class="row cl">
         <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60e;</i></label>
         <div class="formControls col-xs-8">
-          <input id="" name="" type="password" placeholder="密码" class="input-text size-L">
+          <input  name="password" type="password" placeholder="密码" class="input-text size-L">
         </div>
       </div>
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
-          <input class="input-text size-L" type="text" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}" onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;">
-          <img src=""> <a id="kanbuq" href="javascript:;">看不清，换一张</a> </div>
+          <input class="input-text size-L" type="text" placeholder="验证码"  style="width:150px;">
+          <img src="{:captcha_src()}" alt="captcha" onclick="this.src=this.src+'?'+'Math.random()'" />
+         </div>
       </div>
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">

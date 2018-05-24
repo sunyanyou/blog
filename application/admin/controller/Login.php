@@ -1,8 +1,9 @@
 <?php
 namespace app\admin\controller;
+use think\controller;
 
-class Login {
+class Login extends controller {
 	public function index(){
-		return view();
+		return $this->fetch();
 	}
 }
