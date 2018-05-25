@@ -1,8 +1,9 @@
 <?php
 namespace app\admin\controller;
+use think\controller;
 
-class Welcome {
+class Welcome extends Common {
 	public function welcome(){
-		return view();
+        return $this->fetch();
 	}
 }

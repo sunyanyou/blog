@@ -10,6 +10,8 @@
       <path value="$PROJECT_DIR$/vendor/topthink/think-migration" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-installer" />
+      <path value="$PROJECT_DIR$/vendor/houdunwang/config" />
+      <path value="$PROJECT_DIR$/vendor/houdunwang/crypt" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

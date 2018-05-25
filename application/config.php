@@ -250,8 +250,9 @@ return [
 
     //验证码配置
     'captcha'       =>   [
-        'length'  =>  '3',
+        'length'  =>  '2',
         'imageH'  =>  '40',
+        'imageW'  =>  '200',
         'fontsize' => '35',
     ],
 ];

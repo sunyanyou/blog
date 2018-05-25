@@ -11,5 +11,7 @@ class Common extends controller{
 			$this->redirect('admin/Login/index');
 		}
 	}
+
+
 }
 
