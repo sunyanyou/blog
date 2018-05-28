@@ -146,9 +146,6 @@ return [
         '__IMG__'      => '/public/static/images',
         '__JS__'     => '/public/static/js',
         '__ORG__'    => '/public/static/org',
-        '__UI__'    => '/public/static/ui',
-        '__BOOT__' => '/public/static/bootstrap',
-        '__FONT__' => '/public/static/font',
     ],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
