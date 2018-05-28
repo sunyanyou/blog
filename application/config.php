@@ -143,13 +143,12 @@ return [
     'view_replace_str'       => [
         '__STATIC__' => '/public/static',
         '__CSS__'    => '/public/static/css',
-        '__IMG'      => '/public/static/images',  
+        '__IMG__'      => '/public/static/images',
         '__JS__'     => '/public/static/js',
-        '__LIB__'    => '/public/static/lib',
-        '__FONT__'   => '/public/static/fonts',
-        '__HUI__'    => '/public/static/h-ui',
-        '__HUIA__'   => '/public/static/h-ui.admin',
-        '__TMP__'    => '/public/static/temp',     
+        '__ORG__'    => '/public/static/org',
+        '__UI__'    => '/public/static/ui',
+        '__BOOT__' => '/public/static/bootstrap',
+        '__FONT__' => '/public/static/font',
     ],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
@@ -251,8 +250,8 @@ return [
     //验证码配置
     'captcha'       =>   [
         'length'  =>  '2',
-        'imageH'  =>  '40',
+        'imageH'  =>  '50',
         'imageW'  =>  '200',
-        'fontsize' => '35',
+        'fontsize' => '25',
     ],
 ];
