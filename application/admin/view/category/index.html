@@ -25,21 +25,25 @@
                 </tr>
                 </thead>
                 <tbody>
+                {foreach name='field' key='key' item='vo'}
+
+
                 <tr>
-                    <td>编号</td>
-                    <td>栏目名称</td>
+                    <td>{$vo['cate_id']}</td>
+                    <td>{$vo['_cate_name']}</td>
                     <td>
                         <div class="btn-group">
                             <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">操作 <span class="caret"></span></button>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="">添加子类</a></li>
-                                <li><a href="">编辑</a></li>
+                                <li><a href="{:url('admin/category/second',['cate_id'=>$vo['cate_id']])}">添加子类</a></li>
+                                <li><a href="{:url('admin/category/edit',['cate_id'=>$vo['cate_id']])}">编辑</a></li>
                                 <li class="divider"></li>
-                                <li><a href="javascript:;">删除</a></li>
+                                <li><a href="{:url('admin/category/del',['cate_id'=>$vo['cate_id']])}" >删除</a></li>
                             </ul>
                         </div>
                     </td>
                 </tr>
+                {/foreach}
                 </tbody>
             </table>
         </div>
@@ -47,4 +51,5 @@
 </form>
 <div class="pagination pagination-sm pull-right">
 </div>
+
 {/block}

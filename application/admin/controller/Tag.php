@@ -9,4 +9,8 @@ class Tag extends Common
     public function index(){
         return $this->fetch();
     }
+    //添加标签
+    public function store(){
+        return $this->fetch();
+    }
 }

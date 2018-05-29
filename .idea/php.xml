@@ -12,6 +12,7 @@
       <path value="$PROJECT_DIR$/vendor/topthink/think-installer" />
       <path value="$PROJECT_DIR$/vendor/houdunwang/config" />
       <path value="$PROJECT_DIR$/vendor/houdunwang/crypt" />
+      <path value="$PROJECT_DIR$/vendor/houdunwang/arr" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />
