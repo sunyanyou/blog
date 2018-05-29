@@ -25,9 +25,10 @@
                 </tr>
                 </thead>
                 <tbody>
+                {foreach name='tags' item='vo'}
                 <tr>
-                    <td>编号</td>
-                    <td>标签名</td>
+                    <td>{$vo['tag_id']}</td>
+                    <td>{$vo['tag_name']}</td>
                     <td>
                         <div class="btn-group">
                             <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">操作 <span class="caret"></span></button>
@@ -39,11 +40,13 @@
                         </div>
                     </td>
                 </tr>
+                {/foreach}
                 </tbody>
             </table>
         </div>
     </div>
 </form>
 <div class="pagination pagination-sm pull-right">
+    {$tags->render()}
 </div>
 {/block}

@@ -27,6 +27,8 @@ use think\session;
 //}
 class Login extends Controller
 {
+    
+
     public function index()
     {
 
