@@ -11,7 +11,7 @@
 </ol>
 <ul class="nav nav-tabs" role="tablist">
     <li class="active"><a href="">友链管理</a></li>
-    <li><a href="">添加友链</a></li>
+    <li><a href="{:url('store')}">添加友链</a></li>
 </ul>
 <form action="" method="post">
     <div class="panel panel-default">
@@ -21,24 +21,31 @@
                 <tr>
                     <th width="80">编号</th>
                     <th>链接名称</th>
+                    <th>链接地址</th>
+                    <th>排序</th>
                     <th width="200">操作</th>
+
                 </tr>
                 </thead>
                 <tbody>
+                {foreach name='link' item='vo'}
                 <tr>
-                    <td>编号</td>
-                    <td>分类名称</td>
+                    <td>{$vo['link_id']}</td>
+                    <td>{$vo['link_name']}</td>
+                    <td>{$vo['link_url']}</td>
+                    <td>{$vo['link_sort']}</td>
                     <td>
                         <div class="btn-group">
                             <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">操作 <span class="caret"></span></button>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="">编辑</a></li>
+                                <li><a href="{:url('edit',['link_id'=>$vo['link_id']])}">编辑</a></li>
                                 <li class="divider"></li>
-                                <li><a href="javascript:;">删除</a></li>
+                                <li><a href="{:url('del',['link_id'=>$vo['link_id']])}">删除</a></li>
                             </ul>
                         </div>
                     </td>
                 </tr>
+                {/foreach}
                 </tbody>
             </table>
         </div>
