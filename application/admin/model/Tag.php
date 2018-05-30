@@ -8,11 +8,14 @@ class Tag extends Model{
     protected $table = 'blog_tag';
     //添加标签
     public function store($data){
-        $result = $this->validate(true)->save($data);
+        //$result = $this->validate(true)->save($data);
+        $result = $this->validate(true)->save($data,$data['tag_id']);
         if($result){
             return ['valid'=>1,'msg'=>'标签添加成功'];
         }else{
             return ['valid'=>0,'msg'=>'标签添加失败'];
         }
     }
+
+
 }

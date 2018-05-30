@@ -14,13 +14,16 @@ class Tag extends Common
 
     //标签首页
     public function index(){
-        $tags = db('tag')->paginate(1);
+        $tags = db('tag')->paginate(5);
+        $page = $tags->render();
         $this->assign('tags',$tags);
+        $this->assign('page',$page);
         return $this->fetch();
 
     }
     //添加标签
     public function store(){
+        $tag_id = input('param.tag_id');
         if(request()->isPost()){
             $res = $this->db->store(input('post.'));
             if($res['valid']){
@@ -29,6 +32,24 @@ class Tag extends Common
                 $this->error($res['msg']);
             }
         }
+        if($tag_id){
+            $oldData = $this->db->find($tag_id);
+        }else{
+            $oldData = ['tag_name'];
+        }
+        $this->assign('oldData',$oldData);
         return $this->fetch();
+    }
+
+    //删除标签
+    public function del(){
+        $tag_id = input('param.tag_id');
+        //删除
+        if(\app\admin\model\Tag::destroy($tag_id)){
+            $this->success('标签删除成功','index');
+        }else{
+            $this->error('标签删除失败');
+        }
+
     }
 }

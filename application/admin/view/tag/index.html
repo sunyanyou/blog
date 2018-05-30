@@ -33,9 +33,9 @@
                         <div class="btn-group">
                             <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">操作 <span class="caret"></span></button>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="">编辑</a></li>
+                                <li><a href="{:url('admin/tag/store',['tag_id'=>$vo['tag_id']])}">编辑</a></li>
                                 <li class="divider"></li>
-                                <li><a href="javascript:;">删除</a></li>
+                                <li><a href="{:url('admin/tag/del',['tag_id'=>$vo['tag_id']])}">删除</a></li>
                             </ul>
                         </div>
                     </td>
@@ -47,6 +47,6 @@
     </div>
 </form>
 <div class="pagination pagination-sm pull-right">
-    {$tags->render()}
+    {$page}
 </div>
 {/block}
