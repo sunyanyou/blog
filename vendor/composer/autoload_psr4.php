@@ -12,6 +12,7 @@ return array(
     'think\\composer\\' => array($vendorDir . '/topthink/think-installer/src'),
     'think\\captcha\\' => array($vendorDir . '/topthink/think-captcha/src'),
     'think\\' => array($baseDir . '/thinkphp/library/think', $vendorDir . '/topthink/think-image/src', $vendorDir . '/topthink/think-queue/src'),
+    'houdunwang\\file\\' => array($vendorDir . '/houdunwang/file/src'),
     'houdunwang\\crypt\\' => array($vendorDir . '/houdunwang/crypt/src'),
     'houdunwang\\config\\' => array($vendorDir . '/houdunwang/config/src'),
     'houdunwang\\arr\\' => array($vendorDir . '/houdunwang/arr/src'),

@@ -27,6 +27,7 @@ class ComposerStaticInit34a41e2841af1a67f3ddef099fc7b348
         ),
         'h' => 
         array (
+            'houdunwang\\file\\' => 16,
             'houdunwang\\crypt\\' => 17,
             'houdunwang\\config\\' => 18,
             'houdunwang\\arr\\' => 15,
@@ -67,6 +68,10 @@ class ComposerStaticInit34a41e2841af1a67f3ddef099fc7b348
             0 => __DIR__ . '/../..' . '/thinkphp/library/think',
             1 => __DIR__ . '/..' . '/topthink/think-image/src',
             2 => __DIR__ . '/..' . '/topthink/think-queue/src',
+        ),
+        'houdunwang\\file\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/houdunwang/file/src',
         ),
         'houdunwang\\crypt\\' => 
         array (

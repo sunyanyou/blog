@@ -25,7 +25,8 @@
         "topthink/think-queue": "1.*",
         "topthink/think-helper": "1.*",
         "houdunwang/crypt": "^1.0",
-        "houdunwang/arr": "^1.0"
+        "houdunwang/arr": "^1.0",
+        "houdunwang/file": "^1.0"
     },
     "autoload": {
         "psr-4": {

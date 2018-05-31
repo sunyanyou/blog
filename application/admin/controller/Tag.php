@@ -2,7 +2,6 @@
 
 namespace app\admin\controller;
 
-
 class Tag extends Common
 {
     protected $db;

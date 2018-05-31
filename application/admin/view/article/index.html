@@ -28,14 +28,15 @@
                 </tr>
                 </thead>
                 <tbody>
+                {foreach name='list' item='vo'}
                 <tr>
-                    <td>编号</td>
-                    <td>标题</td>
+                    <td>{$vo['arc_id']}</td>
+                    <td>{$vo['arc_title']}</td>
                     <td>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" value="{$vo['arc_sort']}">
                     </td>
-                    <td>所属分类</td>
-                    <td>1990-10-1</td>
+                    <td>{$vo['cate_name']}</td>
+                    <td>{:date('Y-m-d',$vo['sendtime'])}</td>
                     <td>
                         <div class="btn-group">
                             <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">操作 <span class="caret"></span></button>
@@ -47,12 +48,13 @@
                         </div>
                     </td>
                 </tr>
+                {/foreach}
                 </tbody>
             </table>
         </div>
     </div>
 </form>
 <div class="pagination pagination-sm pull-right">
-
+    {$list->render()}
 </div>
 {/block}
