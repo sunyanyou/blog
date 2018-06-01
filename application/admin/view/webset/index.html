@@ -10,7 +10,7 @@
     </li>
 </ol>
 <ul class="nav nav-tabs" role="tablist">
-    <li class="active"><a href="#tab1">站点配置</a></li>
+    <li class="active"><a href="">站点配置</a></li>
 </ul>
 <form action="" method="post">
     <div class="panel panel-default">
@@ -25,14 +25,16 @@
                 </tr>
                 </thead>
                 <tbody>
+                {foreach name='list' item='vo'}
                 <tr>
-                    <td>1</td>
-                    <td>2</td>
+                    <td>{$vo['webset_id']}</td>
+                    <td>{$vo['webset_name']}</td>
                     <td>
-                        <input type="text" class="form-control" value="" onblur="">
+                        <input type="text" class="form-control" value="{$vo['webset_value']}" onblur="change(this,{$vo['webset_id']})">
                     </td>
-                    <td>描述</td>
+                    <td>{$vo['webset_des']}</td>
                 </tr>
+                {/foreach}
                 </tbody>
             </table>
         </div>
@@ -40,4 +42,20 @@
 </form>
 <div class="pagination pagination-sm pull-right">
 </div>
+<script>
+    function change(obj,webset_id) {
+        //获取配置值
+        var webset_value = $(obj).val();
+        $.post("{:url('edit')}",{webset_id:webset_id,webset_value:webset_value},function(res){
+            if(res.code)
+            {
+                //执行成功
+                util.message(res.msg,'refresh','success');
+            }else{
+                //执行失败
+                util.message(res.msg,'','error');
+            }
+        },'json')
+    }
+</script>
 {/block}

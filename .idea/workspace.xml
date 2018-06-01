@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f669249a-d89c-4862-83cf-f9579b78379a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/model/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/model/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/article/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/article/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/article/recycle.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/article/recycle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/controller/Webset.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Webset.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/webset/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/webset/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Article.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Article.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/controller/Article.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="532">
@@ -54,11 +52,38 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/webset/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="32" column="134" selection-start-line="32" selection-start-column="134" selection-end-line="32" selection-end-column="134" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Webset.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/admin/controller/Webset.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Webset.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/model/Webset.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="recycle.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/article/recycle.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="47" column="108" lean-forward="true" selection-start-line="47" selection-start-column="108" selection-end-line="47" selection-end-column="108" />
+            <state relative-caret-position="513">
+              <caret line="78" column="8" lean-forward="true" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -112,8 +137,6 @@
         <option value="$PROJECT_DIR$/application/admin/model/Admin.php" />
         <option value="$PROJECT_DIR$/application/admin/view/category/addcategory.html" />
         <option value="$PROJECT_DIR$/application/admin/view/index/changepass.html" />
-        <option value="$PROJECT_DIR$/application/admin/controller/Webset.php" />
-        <option value="$PROJECT_DIR$/application/admin/view/webset/index.html" />
         <option value="$PROJECT_DIR$/application/admin/view/link/addLink.html" />
         <option value="$PROJECT_DIR$/application/config.php" />
         <option value="$PROJECT_DIR$/application/admin/validate/Category.php" />
@@ -149,6 +172,9 @@
         <option value="$PROJECT_DIR$/application/admin/view/article/recycle.html" />
         <option value="$PROJECT_DIR$/application/admin/model/Article.php" />
         <option value="$PROJECT_DIR$/application/admin/controller/Article.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/webset/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/model/Webset.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/Webset.php" />
       </list>
     </option>
   </component>
@@ -263,6 +289,14 @@
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="link" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="webset" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -310,12 +344,12 @@
       <workItem from="1527558726784" duration="24399000" />
       <workItem from="1527669504548" duration="9818000" />
       <workItem from="1527817366516" duration="113000" />
-      <workItem from="1527834430754" duration="4167000" />
+      <workItem from="1527834430754" duration="5395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68246000" />
+    <option name="totallyTimeSpent" value="69474000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -358,11 +392,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/common/model/Link.php" />
-    <entry file="file://$PROJECT_DIR$/application/common/model/Admin.php" />
-    <entry file="file://$PROJECT_DIR$/application/.htaccess">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/config.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -654,13 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/article/recycle.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="47" column="108" lean-forward="true" selection-start-line="47" selection-start-column="108" selection-end-line="47" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/model/Article.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -672,6 +694,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="109" column="36" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/article/recycle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="78" column="8" lean-forward="true" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/webset/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="32" column="134" selection-start-line="32" selection-start-column="134" selection-end-line="32" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/model/Webset.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/Webset.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
         </state>
       </provider>
     </entry>
