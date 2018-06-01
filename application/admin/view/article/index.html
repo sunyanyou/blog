@@ -1,5 +1,6 @@
 {extend name='base' /}
 {block name='content'}
+
 <ol class="breadcrumb" style="background-color: #f9f9f9;padding:8px 0;margin-bottom:10px;">
     <li>
         <a href=""><i class="fa fa-cogs"></i>
@@ -33,7 +34,8 @@
                     <td>{$vo['arc_id']}</td>
                     <td>{$vo['arc_title']}</td>
                     <td>
-                        <input type="text" class="form-control" value="{$vo['arc_sort']}">
+                        <input type="text" class="form-control" value="{$vo['arc_sort']}"
+                               onblur="changeSort(this,{$vo['arc_id']})">
                     </td>
                     <td>{$vo['cate_name']}</td>
                     <td>{:date('Y-m-d',$vo['sendtime'])}</td>
@@ -41,7 +43,7 @@
                         <div class="btn-group">
                             <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">操作 <span class="caret"></span></button>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="">编辑</a></li>
+                                <li><a href="{:url('edit',['arc_id'=>$vo['arc_id']])}">编辑</a></li>
                                 <li class="divider"></li>
                                 <li><a href="">删除到回收站</a></li>
                             </ul>
@@ -57,4 +59,17 @@
 <div class="pagination pagination-sm pull-right">
     {$list->render()}
 </div>
+<script>
+    function changeSort(obj,arc_id) {
+        //获取修改完成之后的排序值
+        var arc_sort = $(obj).val();
+        $.post("{:url('changeSort')}",{arc_sort:arc_sort,arc_id:arc_id},function(res){
+            if(res.code){
+                util.message(res.msg,'refresh','success');
+            }else{
+                util.message(res.msg,'back','error');
+            }
+        },'json')
+    }
+</script>
 {/block}

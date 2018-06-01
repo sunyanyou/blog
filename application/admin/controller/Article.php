@@ -1,7 +1,7 @@
 <?php
 
 namespace app\admin\controller;
-
+use app\admin\model\Category;
 
 
 class Article extends Common
@@ -35,6 +35,45 @@ class Article extends Common
         $tagData = db('tag')->select();
         $this->assign('tagData',$tagData);
         return $this->fetch();
+    }
+    //修改文章
+    public function edit(){
+        if(request()->isPost()){
+            $res = $this->db->edit(input('post.'));
+            if($res['valid']){
+                $this->success($res['msg'],'index');
+            }else{
+                $this->error($res['msg']);
+            }
+        }
+
+        $arc_id = input('param.arc_id');
+        //获取分类数据
+        $cateData = (new Category())->getAll();
+        $this->assign('cateData',$cateData);
+        //获取标签数据
+        $tagData = db('tag')->select();
+        $this->assign('tagData',$tagData);
+        //获取当前要编辑的文章数据
+        $oldData = db('article')->find($arc_id);
+        $this->assign('oldData',$oldData);
+        //获取当前文章所有标签id
+        $tag_ids = db('arc_tag')->where('arc_id',$arc_id)->column('tag_id');
+        $this->assign('tag_ids',$tag_ids);
+
+        return $this->fetch();
+
+    }
+    //修改排序
+    public function changeSort(){
+        if(request()->isAjax()){
+            $res = $this->db->changeSort(input('post.'));
+            if ($res['valid']){
+                $this->success($res['msg'],'index');
+            }else{
+                $this->error($res['msg']);
+            }
+        }
     }
     //回收站
     public function recycle(){

@@ -51,4 +51,40 @@ class Article extends Model{
             return ['valid'=>0,'msg'=>$this->getError()];
         }
     }
+    //修改排序
+    public function changeSort($data){
+        $result = $this->validate(
+            [
+                'arc_sort' => 'require|between:1,999',
+            ],
+            [
+                'arc_sort.require' => '请输入排序',
+                'arc_sort.between' => '排序需要在1-999之间',
+            ]
+        )->save($data,[$this->pk=>$data['arc_id']]);
+        if($result){
+            return ['valid'=>1,'msg'=>'排序修改成功'];
+        }else{
+            return ['valid'=>0,'msg'=>$this->getError()];
+        }
+    }
+    //修改文章
+    public function edit($data){
+        $res = $this->validate(true)->allowField(true)->save($data,[$this->pk=>$data['arc_id']]);
+        if($res){
+            //首先删除标签中间表里的标签数据
+            (new ArcTag())->where('arc_id',$data['arc_id'])->delete();
+            //然后再进行添加
+            foreach ($data['tag'] as $v){
+                $arcTagData = [
+                    'arc_id' => $this->arc_id,
+                    'tag_id' => $v,
+                ];
+                (new ArcTag())->save($arcTagData);
+            }
+            return ['valid'=>1,'msg'=>'文章修改成功'];
+        }else{
+            return ['valid'=>0,'msg'=>$this->getError()];
+        }
+}
 }
