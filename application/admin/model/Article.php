@@ -86,5 +86,14 @@ class Article extends Model{
         }else{
             return ['valid'=>0,'msg'=>$this->getError()];
         }
-}
+    }
+    //彻底删除文章
+    public function del($arc_id){
+        if(Article::destroy($arc_id)){
+            (new ArcTag())->where('arc_id',$arc_id)->delete();
+            return ['valid'=>1,'msg'=>'删除成功，数据不可恢复'];
+        }else{
+            return ['valid'=>0,'msg'=>'数据删除失败'];
+        }
+    }
 }
