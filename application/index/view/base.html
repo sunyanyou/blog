@@ -45,10 +45,13 @@
 
                 <div class="collapse navbar-collapse" id="example-navbar-collapse">
                     <ul class="_menu" >
-                        <li class="_active"><a href="index.html">首页</a></li>
-                        <li><a href="">新闻</a></li>
-                        <li><a href="">军事</a></li>
-                        <li><a href="">娱乐</a></li>
+                        <li {if condition="!input('param.')"} class="_active" {/if}><a href="__ROOT__/index.html">首页
+                    </a></li>
+                        {foreach name='_cateData' item='vo'}
+                        <li {if condition="input('param.cate_id')==$vo['cate_id']"} class="_active"{/if} >
+                            <a href="{:url('index/lists/index',['cate_id'=>$vo['cate_id']])}">{$vo['cate_name']}</a>
+                        </li>
+                        {/foreach}
                     </ul>
                 </div>
             </div>
@@ -64,9 +67,9 @@
             </main>
             <aside class="col-md-4 hidden-sm hidden-xs">
                 <div class="_widget">
-                    <h4>关于我们</h4>
+                    <h4>关于我</h4>
                     <div class="_info">
-                        <p>一个小人物，一个小程序猿</p>
+                        <p>{$_webset['aboutus']}</p>
                         <p>
                             <i class="glyphicon glyphicon-volume-down"></i>
                             <a href="http://www.linyiol.com" target="_blank">PHP</a>
@@ -76,15 +79,17 @@
                 <div class="_widget">
                     <h4>分类列表</h4>
                     <div>
-                        <a href="">娱乐</a>
+                        {foreach name='_allCateData' item='vo'}
+                            <a href="{:url('index/lists/index',['cate_id'=>$vo['cate_id']])}">{$vo['cate_name']}</a>
+                        {/foreach}
                     </div>
                 </div>
                 <div class="_widget">
                     <h4>标签云</h4>
                     <div class="_tag">
-                        <a href="">PHP</a>
-                        <a href="">PHP</a>
-                        <a href="">PHP</a>
+                        {foreach name='_tagData' item='vo'}
+                            <a href="{:url('index/lists/index',['tag_id'=>$vo['tag_id']])}">{$vo['tag_name']}</a>
+                        {/foreach}
                     </div>
                 </div>
 
@@ -97,21 +102,19 @@
         <div class="row">
             <div class="col-sm-4">
                 <h4 class="_title">最新文章</h4>
+                {foreach name='_articleData' item='vo'}
                 <div id="" class="_single">
-                    <p><a href="">标题</a></p>
-                    <time>2010年11月06日11:24:16</time>
+                    <p><a href="{:url('index/content/index',['arc_id'=>$vo['arc_id']])}">{$vo['arc_title']}</a></p>
+                    <time>{:date('Y年m月d日 H:i:s',$vo['sendtime'])}</time>
                 </div>
-                <div id="" class="_single">
-                    <p><a href="">标题</a></p>
-                    <time>2010年11月06日11:24:16</time>
-                </div>
+                {/foreach}
             </div>
             <div class="col-sm-4 footer_tag">
                 <div id="">
                     <h4 class="_title">标签云</h4>
-                    <a href="">PHP</a>
-                    <a href="">PHP</a>
-                    <a href="">PHP</a>
+                    {foreach name='_tagData' item='vo'}
+                        <a href="{:url('index/lists/index',['tag_id'=>$vo['tag_id']])}">{$vo['tag_name']}</a>
+                    {/foreach}
                 </div>
             </div>
             <div class="col-sm-4">

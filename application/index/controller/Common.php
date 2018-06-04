@@ -15,7 +15,16 @@ class Common extends Controller
         $this->assign('_webset',$webset);
         //获取顶级栏目数据
         $cateData = $this->loadCateData();
-        $this->assign('_CateData',$cateData);
+        $this->assign('_cateData',$cateData);
+        //获取全部栏目数据
+        $allCateData = $this->loadAllCateData();
+        $this->assign('_allCateData',$allCateData);
+        //获取标签数据
+        $tagData = $this->loadTagData();
+        $this->assign('_tagData',$tagData);
+        //最新文章
+        $articleData = $this->loadArticleData();
+        $this->assign('_articleData',$articleData);
         //获取友情链接
         $linkData = $this->loadLinkData();
         $this->assign('_LinkData',$linkData);
@@ -31,5 +40,17 @@ class Common extends Controller
     //获取顶级栏目数据
     private function loadCateData(){
         return db('category')->where('cate_pid',0)->order('cate_sort desc')->limit(3)->select();
+    }
+    //获取全部栏目数据
+    private function loadAllCateData(){
+        return db('category')->order('cate_sort desc')->select();
+    }
+    //获取最新文章
+    private function loadArticleData(){
+        return db('article')->order('sendtime desc')->limit(2)->field('arc_id,arc_title,sendtime')->select();
+    }
+    //获取标签数据
+    private function loadTagData(){
+        return db('tag')->select();
     }
 }
