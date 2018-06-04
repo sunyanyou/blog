@@ -1,12 +1,11 @@
 <?php
+
 namespace app\index\controller;
 
-class Index extends Common
+
+class Lists extends Common
 {
-    public function index()
-    {
-
+    public function index(){
         return $this->fetch();
-
     }
 }
