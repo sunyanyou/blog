@@ -38,7 +38,7 @@ class Lists extends Common
                 ->join('__CATEGORY__ c','a.cate_id=c.cate_id')
                 ->where('a.is_recycle',2)->where('at.tag_id',$tag_id)->select();
 
-            
+
         }
         foreach ($articleData as $k=>$v){
             $articleData[$k]['tags'] = db('arc_tag')->alias('at')->join('__TAG__ t','at.tag_id=t.tag_id')->where('at.arc_id',$v['arc_id'])->field('t.tag_id,t.tag_name')->select();

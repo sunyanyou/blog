@@ -18,4 +18,17 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
 
+    '[list]'     => [
+        ':cate_id'   => ['index/lists/index', ['method' => 'get'], ['id' => '\d+']],
+
+    ],
+    '[tag]'     => [
+        ':tag_id'   => ['index/lists/index', ['method' => 'get'], ['id' => '\d+']],
+
+    ],
+    '[content]'     => [
+        ':arc_id'   => ['index/content/index', ['method' => 'get'], ['id' => '\d+']],
+
+    ],
+
 ];
