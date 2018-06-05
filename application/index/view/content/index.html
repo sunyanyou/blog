@@ -1,13 +1,18 @@
 {extend name='base' /}
-
 {block name='content'}
+<link href="__STATIC__/home/css/view.css" rel="stylesheet">
+<style>
+    img{
+        width: 100%;
+    }
+</style>
 <div class="topnews">
     <h2>您现在的位置是：<a href="__ROOT__/index.html">首页</a>><a href="/">新闻频道</a></h2>
     <div class="news_title">{$articleData['arc_title']}</div>
     <div class="news_author">
         <span class="au01">{$articleData['arc_author']}</span>
         <span class="au02">{:date('Y-m-d H:i:s',$articleData['sendtime'])}</span>
-        <span class="au03">共<b>{$articleData['arc_click']}</b>次浏览</span><strong class="au04 f_r">暂无评论</strong></div>
+        <span class="au03">共<b>{$articleData['arc_click']}</b>次浏览</span></div>
     <div class="tags">
         {foreach name="$articleData['tags']" item='v'}
         <a href="{:url('index/lists/index',['tag_id'=>$v['tag_id']])}" target="_blank">{$v['tag_name']}</a>
