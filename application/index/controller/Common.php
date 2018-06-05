@@ -39,7 +39,7 @@ class Common extends Controller
     }
     //获取顶级栏目数据
     private function loadCateData(){
-        return db('category')->where('cate_pid',0)->order('cate_sort desc')->limit(3)->select();
+        return db('category')->where('cate_pid',0)->order('cate_sort asc')->limit(6)->select();
     }
     //获取全部栏目数据
     private function loadAllCateData(){
@@ -47,7 +47,7 @@ class Common extends Controller
     }
     //获取最新文章
     private function loadArticleData(){
-        return db('article')->order('sendtime desc')->limit(2)->field('arc_id,arc_title,sendtime')->select();
+        return db('article')->order('sendtime desc')->limit(7)->select();
     }
     //获取标签数据
     private function loadTagData(){

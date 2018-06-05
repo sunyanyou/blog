@@ -8,8 +8,7 @@ use app\admin\model\Category;
 class Lists extends Common
 {
     public function index(){
-        $headConf = ['title'=>'个人博客--列表页'];
-        $this->assign('headConf',$headConf);
+
         //获取左侧第一部分数据
         $cate_id = input('param.cate_id');
         $tag_id = input('param.tag_id');
@@ -26,6 +25,7 @@ class Lists extends Common
             $articleData = db('article')->alias('a')->join('__CATEGORY__ c','a.cate_id=c.cate_id')->where('a.is_recycle',
                     2)->whereIn('a.cate_id',$cids)->select();
         }
+
         if($tag_id){
             $headData = [
                 'title' => '标签',
@@ -43,7 +43,10 @@ class Lists extends Common
         foreach ($articleData as $k=>$v){
             $articleData[$k]['tags'] = db('arc_tag')->alias('at')->join('__TAG__ t','at.tag_id=t.tag_id')->where('at.arc_id',$v['arc_id'])->field('t.tag_id,t.tag_name')->select();
         }
+
         $this->assign('headData',$headData);
+        $headConf = ['title'=>"个人博客--{$headData['name']}"];
+        $this->assign('headConf',$headConf);
         $this->assign('articleData',$articleData);
         return $this->fetch();
     }

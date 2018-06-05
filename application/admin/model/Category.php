@@ -8,7 +8,7 @@ class Category extends Model{
     protected $table = 'blog_category';
     //获取栏目树状结构
     public function getAll(){
-        return Arr::tree(db('category')->order('cate_sort desc,cate_id')->select(), 'cate_name', $fieldPri = 'cate_id',
+        return Arr::tree(db('category')->order('cate_sort asc,cate_id')->select(), 'cate_name', $fieldPri = 'cate_id',
             $fieldPid = 'cate_pid');
     }
     //添加栏目

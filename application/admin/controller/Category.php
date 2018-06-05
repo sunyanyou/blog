@@ -81,7 +81,6 @@ class Category extends Common
     //删除栏目
     public function del(){
         $res = $this->db->del(input('param.cate_id'));
-        halt($res);
         if($res['valid']){
             $this->success($res['msg'],'index');
         }else{
