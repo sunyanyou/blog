@@ -7,7 +7,8 @@
     }
 </style>
 <div class="topnews">
-    <h2>您现在的位置是：<a href="__ROOT__/index.html">首页</a>><a href="/">新闻频道</a></h2>
+    <h2>您现在的位置是：<a href="__ROOT__/index.html">首页</a>>
+        <a href="{:url('index/lists/index',['cate_id'=>$articleData['cate_id']])}">{$articleData['cate_name']}</a></h2>
     <div class="news_title">{$articleData['arc_title']}</div>
     <div class="news_author">
         <span class="au01">{$articleData['arc_author']}</span>

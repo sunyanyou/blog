@@ -23,7 +23,7 @@ class Lists extends Common
             ];
             //获取文章数据
             $articleData = db('article')->alias('a')->join('__CATEGORY__ c','a.cate_id=c.cate_id')->where('a.is_recycle',
-                    2)->whereIn('a.cate_id',$cids)->select();
+                    2)->whereIn('a.cate_id',$cids)->paginate(1);
         }
 
         if($tag_id){
@@ -40,9 +40,10 @@ class Lists extends Common
 
 
         }
-        foreach ($articleData as $k=>$v){
-            $articleData[$k]['tags'] = db('arc_tag')->alias('at')->join('__TAG__ t','at.tag_id=t.tag_id')->where('at.arc_id',$v['arc_id'])->field('t.tag_id,t.tag_name')->select();
-        }
+//        foreach ($articleData as $k=>$v){
+//            $articleData[$k]['tags'] = db('arc_tag')->alias('at')->join('__TAG__ t','at.tag_id=t.tag_id')->where('at.arc_id',$v['arc_id'])->field('t.tag_id,t.tag_name')->select();
+//            ;
+//        }
 
         $this->assign('headData',$headData);
         $headConf = ['title'=>"个人博客--{$headData['name']}"];

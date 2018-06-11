@@ -7,10 +7,15 @@ namespace app\index\controller;
 class Content extends Common
 {
     public function index(){
+
+        //$cate_id = input('param.cate_id');
         $arc_id = input('param.arc_id');
+
+
         //文章点击次数+1
         db('article')->where('arc_id',$arc_id)->setInc('arc_click');
-        $articleData = db('article')->find($arc_id);
+        $articleData = db('article')->alias('a')->join('__CATEGORY__ c','a.cate_id=c.cate_id')->find($arc_id);
+
         $headConf = ['title'=>"个人博客--{$articleData['arc_title']}"];
         $this->assign('headConf',$headConf);
         //当前文章标签
@@ -18,5 +23,8 @@ class Content extends Common
             $articleData['arc_id'])->field('t.tag_id,t.tag_name')->select();
         $this->assign('articleData',$articleData);
         return $this->fetch();
+
+        //当前栏目
+
     }
 }

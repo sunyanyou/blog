@@ -17,13 +17,13 @@
     <div class="blogs">
         <figure><img src="{$vo['arc_thumb']}" height="140"></figure>
         <ul>
-            <h3><a href="{:url('index/content/index',['arc_id'=>$vo['arc_id']])}">{$vo['arc_title']}</a></h3>
+            <h3><a
+                    href="{:url('index/content/index',array('arc_id'=>$vo['arc_id']))}">
+                {$vo['arc_title']}</a></h3>
             <p>{:substr($vo['arc_digest'],0,390)} ...</p>
             <p class="autor">
                 <span class="lm f_l">
-                    {foreach name="$vo['tags']" item='v'}
-                        <a href="{:url('index/lists/index',['tag_id'=>$v['tag_id']])}">{$v['tag_name']}</a>、
-                    {/foreach}
+
                 </span>
                 <span class="dtime f_l">{:date('Y-m-d',$vo['sendtime'])}</span>
                 <span class="viewnum f_r">浏览（<a>{$vo['arc_click']}</a>）</span>
@@ -33,6 +33,6 @@
     </div>
    {/foreach}
 </div>
-
-<div class="page"><a title="Total record"><b>106</b> </a><b>1</b><a href="/news/index_2.html">2</a><a href="/news/index_3.html">3</a><a href="/news/index_4.html">4</a><a href="/news/index_5.html">5</a><a href="/news/index_2.html">&gt;</a><a href="/news/index_5.html">&gt;&gt;</a></div>
+{$articleData->render()}
+<!--<div class="page"> <b>1</b><a href="/news/index_2.html">2</a><a href="/news/index_3.html">3</a><a href="/news/index_4.html">4</a><a href="/news/index_5.html">5</a><a href="/news/index_2.html">&gt;</a><a href="/news/index_5.html">&gt;&gt;</a></div>-->
 {/block}
