@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f669249a-d89c-4862-83cf-f9579b78379a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/Content.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/Lists.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Lists.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/content/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/content/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/view/lists/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/lists/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thinkphp/library/think/paginator/driver/Bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/thinkphp/library/think/paginator/driver/Bootstrap.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -78,8 +72,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/index/view/lists/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+            <state relative-caret-position="494">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -344,12 +338,12 @@
       <workItem from="1528091596087" duration="9809000" />
       <workItem from="1528124052839" duration="520000" />
       <workItem from="1528180498856" duration="12547000" />
-      <workItem from="1528681207989" duration="9321000" />
+      <workItem from="1528681207989" duration="9477000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101970000" />
+    <option name="totallyTimeSpent" value="102126000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -681,8 +675,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/index/view/lists/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+        <state relative-caret-position="494">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
