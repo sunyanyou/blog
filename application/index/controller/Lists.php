@@ -23,7 +23,7 @@ class Lists extends Common
             ];
             //获取文章数据
             $articleData = db('article')->alias('a')->join('__CATEGORY__ c','a.cate_id=c.cate_id')->where('a.is_recycle',
-                    2)->whereIn('a.cate_id',$cids)->paginate(1);
+                    2)->whereIn('a.cate_id',$cids)->paginate(10);
         }
 
         if($tag_id){

@@ -1,0 +1,105 @@
+{extend name='base' /}
+{block name='content'}
+<script>
+    window.hdjs={};
+    //组件目录必须绝对路径(在网站根目录时不用设置)
+    window.hdjs.base = '__STATIC__/node_modules/hdjs';
+    //上传文件后台地址
+
+    window.hdjs.uploader = "{:url('system/component/uploader')}";
+    //获取文件列表的后台地址
+    window.hdjs.filesLists = "{:url('system/component/filesLists')}?";
+</script>
+<script src="__STATIC__/node_modules/hdjs/static/requirejs/require.js"></script>
+<script src="__STATIC__/node_modules/hdjs/static/requirejs/config.js"></script>
+<ol class="breadcrumb" style="background-color: #f9f9f9;padding:8px 0;margin-bottom:10px;">
+    <li>
+        <a href="{:url('index')}"><i class="fa fa-cogs"></i>
+            焦点图管理</a>
+    </li>
+    <li class="active">
+        <a href="{:url('store')}">焦点图添加</a>
+    </li>
+</ol>
+<ul class="nav nav-tabs" role="tablist">
+    <li><a href="{:url('index')}">焦点图管理</a></li>
+    <li class="active"><a href="{:url('store')}">焦点图添加</a></li>
+</ul>
+<form class="form-horizontal" id="form"  action="" method="post">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">焦点图管理</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">标题</label>
+                <div class="col-sm-9">
+                    <input type="text" name="slider_title"  class="form-control" placeholder="标题">
+
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">链接地址</label>
+                <div class="col-sm-9">
+                    <input type="text" name="slider_url"  class="form-control" placeholder="链接地址">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">链接排序</label>
+                <div class="col-sm-9">
+                    <input type="text" name="slider_sort"  class="form-control" placeholder="链接排序" value="100">
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">焦点图</label>
+                <div class="col-sm-9">
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input class="form-control" name="slider_thumb" readonly="" value="">
+                            <div class="input-group-btn">
+                                <button onclick="upImagePc(this)" class="btn btn-default" type="button">选择图片</button>
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin-top:5px;">
+                            <img src="__STATIC__/images/nopic.jpg" class="img-responsive img-thumbnail" width="150">
+                            <em class="close" style="position:absolute; top: 0px; right: -14px;" title="删除这张图片"
+                                onclick="removeImg(this)">×</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">确定</button>
+</form>
+<script>
+    require(['hdjs']);
+    //上传图片
+    function upImagePc() {
+        require(['hdjs'], function (hdjs) {
+            var options = {
+                multiple: false,//是否允许多图上传
+                //data是向后台服务器提交的POST数据
+                data: {name: '后盾人', year: 2099},
+            };
+            hdjs.image(function (images) {
+                //上传成功的图片，数组类型
+                $("[name='slider_thumb']").val(images[0]);
+                $(".img-thumbnail").attr('src', images[0]);
+            }, options)
+        });
+    }
+
+    //移除图片
+    function removeImg(obj) {
+        $(obj).prev('img').attr('src', '../dist/static/image/nopic.jpg');
+        $(obj).parent().prev().find('input').val('');
+    }
+</script>
+{/block}

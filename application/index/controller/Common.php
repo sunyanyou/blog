@@ -28,6 +28,9 @@ class Common extends Controller
         //点击排行
         $clickData = $this->loadClickData();
         $this->assign('_clickData',$clickData);
+        //站长推荐
+        $tuijianData = $this->loadTuijianData();
+        $this->assign('_tuijianData',$tuijianData);
         //获取友情链接
         $linkData = $this->loadLinkData();
         $this->assign('_LinkData',$linkData);
@@ -55,6 +58,10 @@ class Common extends Controller
     //获取点击排行的文章
     private function loadClickData(){
         return db('article')->order('arc_click desc')->limit(7)->select();
+    }
+    //站长推荐文章
+    private function loadTuijianData(){
+        return db('article')->order('sendtime desc')->where('arc_tuijian',1)->limit(7)->select();
     }
     //获取标签数据
     private function loadTagData(){

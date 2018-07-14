@@ -44,7 +44,7 @@
         <ul>
 
             <h3><a href="{:url('index/content/index',['arc_id'=>$vo['arc_id']])}">{$vo['arc_title']}</a></h3>
-            <p>{:substr($vo['arc_digest'],0,390)} ...</p>
+            <p>{$vo['arc_digest']|mb_substr=0,380,'utf-8'} ...</p>
             <p class="autor">
                 <span class="lm f_l">
                     {foreach name="vo['tags']" item='v'}

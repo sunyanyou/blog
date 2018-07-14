@@ -4,15 +4,15 @@
 <ol class="breadcrumb" style="background-color: #f9f9f9;padding:8px 0;margin-bottom:10px;">
     <li>
         <a href=""><i class="fa fa-cogs"></i>
-            文章管理</a>
+            焦点图管理</a>
     </li>
     <li class="active">
-        <a href="{:url('store')}">文章添加</a>
+        <a href="{:url('store')}">焦点图添加</a>
     </li>
 </ol>
 <ul class="nav nav-tabs" role="tablist">
-    <li class="active"><a href="">文章管理</a></li>
-    <li><a href="{:url('store')}">文章添加</a></li>
+    <li class="active"><a href="">焦点图管理</a></li>
+    <li><a href="{:url('store')}">焦点图添加</a></li>
 </ul>
 <form action="" method="post">
     <div class="panel panel-default">
@@ -21,35 +21,30 @@
                 <thead>
                 <tr>
                     <th width="5%">编号</th>
-                    <th>文章名称</th>
+                    <th>标题</th>
                     <th width="5%">排序</th>
-                    <th width="5%">点击</th>
-                    <th>所属分类</th>
+                    <th>链接地址</th>
                     <th>添加时间</th>
                     <th width="200">操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                {foreach name='list' item='vo'}
+                {foreach name='slider' item='vo'}
                 <tr>
-                    <td>{$vo['arc_id']}</td>
-                    <td>{$vo['arc_title']}</td>
+                    <td>{$vo['slider_id']}</td>
+                    <td>{$vo['slider_title']}</td>
                     <td width="10%">
-                        <input type="text" class="form-control" value="{$vo['arc_sort']}"
-                               onblur="changeSort(this,{$vo['arc_id']})">
+                        <input type="text" class="form-control" value="{$vo['slider_sort']}">
                     </td>
-                    <td width="5%">
-                        {$vo['arc_click']}
-                    </td>
-                    <td>{$vo['cate_name']}</td>
-                    <td>{:date('Y-m-d',$vo['sendtime'])}</td>
+                    <td>{$vo['slider_url']}</td>
+                    <td>{:date('Y-m-d',$vo['slidertime'])}</td>
                     <td>
                         <div class="btn-group">
                             <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">操作 <span class="caret"></span></button>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="{:url('edit',['arc_id'=>$vo['arc_id']])}">编辑</a></li>
+                                <li><a href="{:url('edit',['slider_id'=>$vo['slider_id']])}">编辑</a></li>
                                 <li class="divider"></li>
-                                <li><a href="{:url('delToRecycle',['arc_id'=>$vo['arc_id']])}">删除到回收站</a></li>
+                                <li><a href="{:url('del',['slider_id'=>$vo['slider_id']])}">删除</a></li>
                             </ul>
                         </div>
                     </td>
@@ -61,7 +56,7 @@
     </div>
 </form>
 <div class="pagination pagination-sm pull-right">
-    {$list->render()}
+    {$slider->render()}
 </div>
 <script>
     function changeSort(obj,arc_id) {
