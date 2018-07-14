@@ -25,6 +25,9 @@ class Common extends Controller
         //最新文章
         $articleData = $this->loadArticleData();
         $this->assign('_articleData',$articleData);
+        //点击排行
+        $clickData = $this->loadClickData();
+        $this->assign('_clickData',$clickData);
         //获取友情链接
         $linkData = $this->loadLinkData();
         $this->assign('_LinkData',$linkData);
@@ -48,6 +51,10 @@ class Common extends Controller
     //获取最新文章
     private function loadArticleData(){
         return db('article')->order('sendtime desc')->limit(7)->select();
+    }
+    //获取点击排行的文章
+    private function loadClickData(){
+        return db('article')->order('arc_click desc')->limit(7)->select();
     }
     //获取标签数据
     private function loadTagData(){

@@ -25,7 +25,9 @@ class Article extends Model{
     public function getAll ($is_recycle)
     {
         return db( 'article' )->alias( 'a' )->join( '__CATEGORY__ c' , 'a.cate_id=c.cate_id' )->where( 'a.is_recycle' ,
-            $is_recycle )->field( 'a.arc_id,a.arc_title,a.arc_author,a.sendtime,c.cate_name,a.arc_sort' )->order( 'a.arc_sort desc,a.sendtime desc,a.arc_id desc' )->paginate( 2 );
+            $is_recycle )->field( 'a.arc_id,a.arc_title,a.arc_click,a.arc_author,a.sendtime,c.cate_name,a.arc_sort' )
+            ->order(
+                'a.arc_sort desc,a.sendtime desc,a.arc_id desc' )->paginate( 2 );
     }
     //添加文章
     public function store($data){

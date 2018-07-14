@@ -23,6 +23,7 @@
                     <th width="5%">编号</th>
                     <th>文章名称</th>
                     <th width="5%">排序</th>
+                    <th>点击</th>
                     <th>所属分类</th>
                     <th>添加时间</th>
                     <th width="200">操作</th>
@@ -36,6 +37,9 @@
                     <td>
                         <input type="text" class="form-control" value="{$vo['arc_sort']}"
                                onblur="changeSort(this,{$vo['arc_id']})">
+                    </td>
+                    <td>
+                        {$vo['arc_click']}
                     </td>
                     <td>{$vo['cate_name']}</td>
                     <td>{:date('Y-m-d',$vo['sendtime'])}</td>
