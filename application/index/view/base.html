@@ -82,21 +82,21 @@
                 <div style="display: block;" class="bd bd-news" >
                     <ul>
                         {foreach name='_clickData' item='vo'}
-                        <li><a href="/" target="_blank">{$vo['arc_title']}</a></li>
+                        <li><a href="/" target="_blank">{$vo['arc_title']|mb_substr=0,20,'utf-8'}</a></li>
                         {/foreach}
                     </ul>
                 </div>
                 <div  class="bd bd-news">
                     <ul>
                         {foreach name='_articleData' item='vo'}
-                        <li><a href="/" target="_blank">{$vo['arc_title']}</a></li>
+                        <li><a href="/" target="_blank">{$vo['arc_title']|mb_substr=0,20,'utf-8'}</a></li>
                         {/foreach}
                     </ul>
                 </div>
                 <div class="bd bd-news">
                     <ul>
                         {foreach name='_tuijianData' item='vo'}
-                        <li><a href="/" target="_blank">{$vo['arc_title']}</a></li>
+                        <li><a href="/" target="_blank">{$vo['arc_title']|mb_substr=0,20,'utf-8'}</a></li>
                         {/foreach}
                     </ul>
                 </div>
