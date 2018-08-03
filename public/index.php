@@ -17,6 +17,6 @@ define('BLOG_ROOT','http://localhost/public/');
 // 加载框架引导文件
 require __DIR__ . '/../thinkphp/start.php';
 
-
+//自动生成目录
 // $build = include '../build.php';
 // \think\Build::run($build);
